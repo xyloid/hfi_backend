@@ -3,7 +3,7 @@ const fs = require("fs");
 let rawdata = fs.readFileSync("./data/data.json");
 var data = JSON.parse(rawdata);
 
-const Record = require('./models/records');
+const Record = require('./models/record');
 
 Record.deleteMany({}, () => {
   console.log("clean collection");
