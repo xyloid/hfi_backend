@@ -1,12 +1,11 @@
 const recordsRouter = require("./controllers/records");
 const usersRouter = require('./controllers/users')
 
-users = [{ username: "admin", _id: 1234 }];
-
 const cors = require("cors");
 const express = require("express");
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 const mongoose = require("mongoose");
 
