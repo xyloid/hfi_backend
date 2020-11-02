@@ -10,7 +10,8 @@ app.use(express.json());
 
 const mongoose = require("mongoose");
 
-const url = `mongodb+srv://userhfi:userhfi@fso2020.q4awj.azure.mongodb.net/hfi?retryWrites=true&w=majority`;
+// const url = `mongodb+srv://userhfi:userhfi@fso2020.q4awj.azure.mongodb.net/hfi?retryWrites=true&w=majority`;
+const url = process.env.MONGODB_URI
 
 mongoose.connect(url, {
   useNewUrlParser: true,
