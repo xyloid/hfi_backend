@@ -1,14 +1,5 @@
 const mongoose = require("mongoose");
 
-const url = `mongodb+srv://userhfi:userhfi@fso2020.q4awj.azure.mongodb.net/hfi?retryWrites=true&w=majority`;
-
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-});
-
 const recordSchema = new mongoose.Schema({
   id: String,
   name: String,
