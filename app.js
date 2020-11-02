@@ -1,4 +1,5 @@
 const recordsRouter = require("./controllers/records");
+const usersRouter = require('./controllers/users')
 
 users = [{ username: "admin", _id: 1234 }];
 
@@ -24,5 +25,6 @@ app.get("/", (request, response) => {
 });
 
 app.use("/api/data", recordsRouter);
+app.use('/api/users', usersRouter)
 
 module.exports = app
