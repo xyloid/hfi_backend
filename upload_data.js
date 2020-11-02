@@ -1,33 +1,9 @@
+const mongoose = require("mongoose");
 const fs = require("fs");
 let rawdata = fs.readFileSync("./data/data.json");
 var data = JSON.parse(rawdata);
 
-const mongoose = require("mongoose");
-
-const url = `mongodb+srv://userhfi:userhfi@fso2020.q4awj.azure.mongodb.net/hfi?retryWrites=true&w=majority`;
-
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-});
-
-const recordSchema = new mongoose.Schema({
-  id: String,
-  name: String,
-  gender: String,
-  age: Number,
-  statusHistory: [{ statusCode: String, timestamp: Date }],
-  caseStatus: {
-    type: String,
-    enum: ["active", "inactive"],
-    default: "inactive",
-  },
-  plan: String,
-});
-
-const Record = mongoose.model("Record", recordSchema);
+const Record = require('./models/records');
 
 Record.deleteMany({}, () => {
   console.log("clean collection");
