@@ -2,11 +2,11 @@ const recordsRouter = require("./controllers/records");
 const usersRouter = require("./controllers/users");
 const loginRouter = require("./controllers/login");
 
+const middleware = require('./utils/middleware')
+
 const cors = require("cors");
 const express = require("express");
 const app = express();
-app.use(cors());
-app.use(express.json());
 
 const mongoose = require("mongoose");
 
@@ -20,6 +20,12 @@ mongoose.connect(url, {
   useCreateIndex: true,
 });
 
+
+app.use(cors());
+app.use(express.json());
+app.use(middleware.requestLogger)
+
+
 app.get("/", (request, response) => {
   response.send("<h1>Backend is running.</h1>");
 });
@@ -27,5 +33,7 @@ app.get("/", (request, response) => {
 app.use("/api/data", recordsRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/login", loginRouter);
+
+app.use(middleware.errorHandler)
 
 module.exports = app;
