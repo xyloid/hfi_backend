@@ -1,5 +1,6 @@
 const recordsRouter = require("./controllers/records");
-const usersRouter = require('./controllers/users')
+const usersRouter = require("./controllers/users");
+const loginRouter = require("./controllers/login");
 
 const cors = require("cors");
 const express = require("express");
@@ -18,12 +19,12 @@ mongoose.connect(url, {
   useCreateIndex: true,
 });
 
-
 app.get("/", (request, response) => {
   response.send("<h1>Backend is running.</h1>");
 });
 
 app.use("/api/data", recordsRouter);
-app.use('/api/users', usersRouter)
+app.use("/api/users", usersRouter);
+app.use("/api/login", loginRouter);
 
-module.exports = app
+module.exports = app;
