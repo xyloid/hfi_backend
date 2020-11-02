@@ -19,10 +19,26 @@ recordsRouter.get("/", (request, response) => {
   if (!token || !decodedToken.id) {
     return response.status(401).json({ error: "token missing or invalid" });
   } else {
-    Record.find({}).then((notes) => {
-      response.json(notes);
+    Record.find({},{"statusHistory":0}).then((record) => {
+      response.json(record);
     });
   }
 });
+
+
+recordsRouter.get("/:id", (request, response) => {
+    const token = getTokenFrom(request);
+    const decodedToken = jwt.verify(token, process.env.SECRET);
+    if (!token || !decodedToken.id) {
+      return response.status(401).json({ error: "token missing or invalid" });
+    } else {
+      Record.findOne({"id":request.params.id}).then((record) => {
+        response.json(record);
+      });
+    }
+  });
+
+
+
 
 module.exports = recordsRouter;

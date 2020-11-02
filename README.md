@@ -7,5 +7,5 @@
 - `npm install mongoose` to use mongodb
 - `npm install --save-dev nodemon` for easier debug
 - `npm install bcrypt` for user login
-- `npm install jsonwebtoken` for authentication 
+- `npm install jsonwebtoken` for authentication
 - `npm install dotenv` for environment variable
