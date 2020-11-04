@@ -9,3 +9,7 @@
 - `npm install bcrypt` for user login
 - `npm install jsonwebtoken` for authentication
 - `npm install dotenv` for environment variable
+
+## How to Start
+
+- run `npm start` in the project root
