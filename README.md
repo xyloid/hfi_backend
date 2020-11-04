@@ -2,6 +2,8 @@
 
 Heroku deployment: https://hfi-data-viewer.herokuapp.com/
 
+Frontend repo: https://github.com/xyloid/hfi_frontend
+
 ## Technologies
 
 - Node.js
