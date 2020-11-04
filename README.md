@@ -20,3 +20,9 @@
 
 - run `npm start` in the project root dir
     - There is a `.env` file, which is used to store `PORT`, `MONGODB_URI`, etc. It is not included in the github repo.
+
+## Deploy to Heroku
+
+- `heroku create hfi-data-viewer`
+- `git push heroku master`
+- set up heroku environment variable on the web site according to `.env`

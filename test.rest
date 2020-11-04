@@ -12,6 +12,11 @@ GET http://localhost:3001/api/data/
 Content-Type: application/json
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI1ZmEwNjI4NTA0OGI1NjIzZjM5ZDQ4ZTIiLCJpYXQiOjE2MDQzNTAwMjN9.P1sitzS4PBfPNM3H9D4V5UznysUmBkT3nZAWfhCm8QQ
 
+###
+GET http://localhost:3001/api/data/OHVB17802
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI1ZmEwNjI4NTA0OGI1NjIzZjM5ZDQ4ZTIiLCJpYXQiOjE2MDQzNTAwMjN9.P1sitzS4PBfPNM3H9D4V5UznysUmBkT3nZAWfhCm8QQ
+
 
 ### return invalid token
 GET http://localhost:3001/api/data/
@@ -26,3 +31,17 @@ Content-Type: application/json
     "password":"pwd"
 }
 
+
+### get admin token
+POST https://hfi-data-viewer.herokuapp.com/api/login/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password":"admin"
+}
+
+### toekn of admin
+GET https://hfi-data-viewer.herokuapp.com/api/data
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI1ZmEwNjI4NTA0OGI1NjIzZjM5ZDQ4ZTIiLCJpYXQiOjE2MDQ0NTM4NDl9.DGqnW1cOKXt5bzxDNuBvQp_L2ULXBZFT8imsK0S-ZE4
