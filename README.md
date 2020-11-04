@@ -19,10 +19,16 @@
 ## How to Start
 
 - run `npm start` in the project root dir
-    - There is a `.env` file, which is used to store `PORT`, `MONGODB_URI`, etc. It is not included in the github repo.
+    - There is a `.env` file, which is used to store `PORT`, `MONGODB_URI`, etc.
+- run `npm run dev` to run in dev mode, nodemon will monitor code change
 
 ## Deploy to Heroku
 
-- `heroku create hfi-data-viewer`
-- `git push heroku master`
+### Initial Steps
+- create heroku app `heroku create hfi-data-viewer`
 - set up heroku environment variable on the web site according to `.env`
+
+### Iteration
+
+- build ui from frontend `npm run build:ui`
+- push current version to heroku `git push heroku master` or `npm run deploy`
