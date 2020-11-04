@@ -1,4 +1,10 @@
-# Backend of HFI assignment
+# Backend of HFI Assignment
+
+## Technologies
+
+- Node.js
+- Express.js
+- MongoDB
 
 ## Dependencies
 
@@ -12,4 +18,5 @@
 
 ## How to Start
 
-- run `npm start` in the project root
+- run `npm start` in the project root dir
+    - There is a `.env` file, which is used to store `PORT`, `MONGODB_URI`, etc. It is not included in the github repo.
