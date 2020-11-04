@@ -1,5 +1,7 @@
 # Backend of HFI Assignment
 
+Heroku deployment: https://hfi-data-viewer.herokuapp.com/
+
 ## Technologies
 
 - Node.js
