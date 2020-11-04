@@ -8,6 +8,9 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 
+// to use build from frontend
+app.use(express.static('build'))
+
 const mongoose = require("mongoose");
 
 // const url = `mongodb+srv://userhfi:userhfi@fso2020.q4awj.azure.mongodb.net/hfi?retryWrites=true&w=majority`;
